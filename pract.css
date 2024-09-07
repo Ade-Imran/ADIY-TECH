@@ -1,0 +1,323 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+.home-container, .quiz-container, .result-container, .corrections-container {
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    opacity: 0; /* Initially hide containers */
+    transition: opacity 0.5s ease-in-out;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-container.show, .quiz-container.show, .result-container.show, .corrections-container.show {
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1; /* Show containers with animation */
+}
+
+.home-container h1, .result-container h1, .corrections-container h1 {
+    font-size: 24px;
+    color: #333;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-container p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.home-container button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.home-container button:hover {
+    background-color: #218838;
+}
+
+.hint {
+    display: none;
+    color: #666;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.timer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background-color: #e0e0e0;
+    margin-top: 10px;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: #28a745;
+}
+
+.quiz-body .options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 18px;
+}
+
+.option:hover {
+    background-color: #d0d0d0;
+    transform: scale(1.05);
+}
+
+.option.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+#next-btn, #freeze-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#next-btn:hover, #freeze-btn:hover {
+    background-color: #218838;
+}
+
+.result-container h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.result-container p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.result-container button, .corrections-container button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.result-container button:hover, .corrections-container button:hover {
+    background-color: #0056b3;
+}
+
+.correction-item {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.corrections-container {
+    display: none;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.corrections-container.show {
+    display: block;
+}
+.animate-remark {
+    animation: fadeIn 2s ease-in-out;
+    color: green;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Basic modal styles */
+/* Modal background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Darker background with more opacity */
+}
+
+/* Modal content */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px; /* Set a maximum width for the modal */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Modal header */
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Modal close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* Modal paragraph text */
+.modal-content p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Modal buttons */
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-buttons button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-buttons button:hover {
+    background-color: #0056b3;
+}
+
+#return-btn {
+    background-color: #6c757d;
+}
+
+#return-btn:hover {
+    background-color: #5a6268;
+}
+
+.all {
+    background-color: whitesmoke;
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .bar {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    }
+    
+    .bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    }
+    
+    .bar a {
+    color: #fff;
+    text-decoration: none;
+    }
+
+    .bar1 {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        }
+        
+        .bar1 ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 30px;
+        }        
+   

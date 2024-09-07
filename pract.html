@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table Quiz</title>
+    <link rel="stylesheet" href="pract.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<header>
+    <div class="bar">
+  <ul>
+  <li><a href="real.html"><span class="icon">&#127968;</span>Home</a></li>
+  </ul>
+  </div>
+  </header>
+<body>
+    <div class="home-container" id="home-container">
+        <h1>Welcome to the Periodic Table Quiz!</h1>
+        <p>Test your knowledge about the elements of the periodic table.</p>
+        <button onclick="startQuiz()">Start Quiz</button>
+        <button id="watch-ad-btn" onclick="watchAd()" onmouseover="showAdHint()" onmouseout="hideAdHint()">Watch Ad</button>
+        <span id="ad-hint" class="hint">Watch an ad to earn 1 more correction chances</span>
+          <div id="correction-chances" onmouseover="showCorrectionHint()" onmouseout="hideCorrectionHint()">Show Correction Chances: <span id="correction-left">1</span></div>  
+        <span id="correction-hint" class="hint">Shows how many times you can display your correction</span>
+        <div id="ad-container"></div>
+    </div>
+    <div class="quiz-container" id="quiz-container">
+        <div class="quiz-header">
+            <h1 id="question">Loading...</h1>
+            <div class="timer" id="timer">10</div>
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+        </div>
+        <div class="quiz-body">
+            <div id="options-container" class="options-container"></div>
+        </div>
+        <button id="next-btn" onclick="nextQuestion()">Next</button>
+    </div>
+    <div class="result-container" id="result-container">
+        <h1>Quiz Completed!</h1>
+        <p id="score">Your Score: 0/20</p>
+        <p id="remark"></p>
+        <button onclick="showCorrections()">Show Corrections</button>
+        <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+    <div class="corrections-container" id="corrections-container">
+        <h1>Corrections</h1>
+        <div id="corrections-list"></div>
+        <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+  <div id="correction-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal-btn" class="close">&times;</span>
+        <h2>Oops, sorry you are out of Correction Chances</h2>
+        <p>Would you like to watch an adverstiment to earn more chances?</p>
+        <div class="modal-buttons">
+            <button id="watch-ad-modal-btn" onclick="watchAd()">Watch Ad</button>
+            <button id="return-btn" onclick="closeModal()">Return</button>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+</div>
+<footer>
+    <div class="bar1">
+      Copyright Extremenet Links © 2024.  All Rights Reserved By <a href="https://wa.link/evblew"_blank>ADIY-Tech Developer</a>
+  </div>
+  </footer>
+    <script src="pract.js"></script>
+</body>
+</html>
