@@ -1,3 +1,24 @@
+/* Media query for small screens */
+        @media only screen and (max-width: 768px) {
+            #content {
+                display: none;
+            }
+
+            #rotate-message {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                text-align: center;
+                font-size: 20px;
+                background-color: #f0f0f0;
+            }
+        }
+        
+        /* Initially hide the rotate message */
+        #rotate-message {
+            display: none;
+        }
 
 
   header, footer {
