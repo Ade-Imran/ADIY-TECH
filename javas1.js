@@ -1,25 +1,4 @@
- function checkOrientation() {
-            const content = document.getElementById('content');
-            const rotateMessage = document.getElementById('rotate-message');
-            
-            if (window.innerWidth < 768) { // Small screen check
-                if (window.innerHeight > window.innerWidth) { // Portrait mode
-                    content.style.display = 'none';
-                    rotateMessage.style.display = 'flex';
-                } else { // Landscape mode
-                    content.style.display = 'block';
-                    rotateMessage.style.display = 'none';
-                }
-            } else {
-                // If the screen is large, always show content
-                content.style.display = 'block';
-                rotateMessage.style.display = 'none';
-            }
-        }
 
-        // Run on page load and orientation change
-        window.addEventListener('load', checkOrientation);
-        window.addEventListener('resize', checkOrientation);
   const elementButtons = document.querySelectorAll('.element-button');
   elementButtons.forEach(button => {
     button.addEventListener('click', function() {
