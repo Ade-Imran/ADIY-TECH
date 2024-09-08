@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Get the audio element
+// Get the audio element by its id "background-audio"
         const audio = document.getElementById('background-audio');
 
         // Get the stop button
@@ -131,3 +131,4 @@ document.addEventListener('DOMContentLoaded', function() {
             audio.pause();
             // Reset the audio to the start (if desired)
             audio.currentTime = 0;
+        });
