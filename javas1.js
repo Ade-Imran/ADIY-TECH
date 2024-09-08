@@ -2,7 +2,7 @@ function checkOrientation() {
             const content = document.getElementById('content');
             const rotateMessage = document.getElementById('rotate-message');
             
-            if (window.innerWidth < 768) { // Small screen check
+            if (window.innerWidth < 1080) { // Small screen check
                 if (window.innerHeight > window.innerWidth) { // Portrait mode
                     content.style.display = 'none';
                     rotateMessage.style.display = 'flex';
