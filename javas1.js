@@ -118,3 +118,16 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelector('button').style.display = 'inline-block';
     });
   });
+
+  // Get the audio element
+        const audio = document.getElementById('myAudio');
+
+        // Get the stop button
+        const stopButton = document.getElementById('stopButton');
+
+        // Add event listener to the button
+        stopButton.addEventListener('click', function() {
+            // Pause the audio
+            audio.pause();
+            // Reset the audio to the start (if desired)
+            audio.currentTime = 0;
