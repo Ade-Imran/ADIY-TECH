@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Get the audio element
-        const audio = document.getElementById('myAudio');
+        const audio = document.getElementById('background-audio');
 
         // Get the stop button
         const stopButton = document.getElementById('stopButton');
